@@ -2,10 +2,11 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 .top-color {
 	position: absolute;
-	background-color: #dd2727;
+	background-color: #ed1b1b;
 	height: 18rem;
 	width: 100%;
 	z-index: -1;
@@ -19,23 +20,47 @@ img {
 	width: 7rem;
 }
 .btn {
-    width: 12%;
+	width: 12%;
 	background-color: #00000000 !important;
-    border: #00000000 !important;
+	border: #00000000 !important;
 }
 .btn:hover {
 	background-color: #ffffff1e !important;
-    border: #00000000 !important;
+	border: #00000000 !important;
+}
+
+.container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.gray{
+    color: rgb(72, 72, 72);
+}
+
+.green{
+    color: #16A34A;
+}
+
+.red{
+    color: #dd2727;
 }
 
 @media only screen and (max-width: 560px) {
-    .btn{
-        width: 33%;
-    }
-  }
+	.btn {
+		width: 33%;
+	}
+}
 
-  @media only screen and (min-width: 992px) {
-    .btn{
-        width: 8%;
-    }
-  }
+@media only screen and (min-width: 992px) {
+	.btn {
+		width: 8%;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.container {
+        padding-right: calc(var(--bs-gutter-x) * .5) !important;
+        padding-left: calc(var(--bs-gutter-x) * .5) !important;
+	}
+}
