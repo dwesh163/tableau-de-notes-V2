@@ -6,7 +6,7 @@
 }
 .top-color {
 	position: absolute;
-	background-color: #ed1b1b;
+	background-color: #ed2727;
 	height: 18rem;
 	width: 100%;
 	z-index: -1;
@@ -17,10 +17,11 @@ main {
 img {
 	margin-left: 12px;
 	margin-top: 1px;
-	width: 7rem;
+	width: 6.5rem;
 }
 .btn {
 	width: 12%;
+	max-width: 75px;
 	background-color: #00000000 !important;
 	border: #00000000 !important;
 }
