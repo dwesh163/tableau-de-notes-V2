@@ -1,0 +1,16 @@
+version: '3'
+services:
+  GradeDB:
+    build: .
+    image: mariadb:latest
+    container_name: gradesDB
+    environment:
+      - MARIADB_DATABASE=${DATABASE}
+      - MARIADB_ROOT_PASSWORD=${ROOT_PASSWORD}
+      - MARIADB_USER=${USER}
+      - MARIADB_PASSWORD=${PASSWORD}
+    volumes:
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
