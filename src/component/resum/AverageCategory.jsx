@@ -1,12 +1,17 @@
-export function AverageCategory({ category }) {
+export function AverageCategory({ category, IsLast}) {
     console.log(category);
 
     let percentClass
+    let hr
 
     if (category.percent > 0) {
         percentClass='card-text green'
     } else {
         percentClass='card-text red'
+    }
+
+    if (!IsLast) {
+        hr = <hr className="border-black" style={{opacity: "0.15", margin: "0px"}} />
     }
 
 	return (
@@ -18,7 +23,8 @@ export function AverageCategory({ category }) {
 				</div>
 				<h3 className="fw-bold">{category.average}</h3>
 			</div>
-			<hr className="border-black" style={{opacity: "0.15", margin: "0px"}} />
+            {hr}
+			
 		</>
 	);
 }
