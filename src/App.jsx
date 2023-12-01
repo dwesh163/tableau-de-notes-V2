@@ -1,32 +1,33 @@
-import { useState } from 'react'
+import { AllAverageCategory } from './component/resum/AllAverageCategory.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+  const category = {
+    "matu" : {
+      "average" : 5.46,
+      "percent" : +12.56,
+      "name" : "matu"
+    },
+    "epsic" : {
+      "average" : 3.62,
+      "percent" : -13.51,
+      "name" : "epsic" 
+    },
+    "cie" : {
+      "average" : 1.43,
+      "percent" : -17.17,
+      "name" :  "cie"
+    },
+  }
+
+	return (
+		<>
+			<div className="container d-flex gap-3">
+        <AllAverageCategory categorys={category} />
+        <div></div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+		</>
+	);
 }
 
-export default App
+export default App;
