@@ -3,7 +3,6 @@ import { AverageCategory } from "./AverageCategory.jsx"
 export function AllAverageCategory({categorys}) {
 
     let AverageCategoryList = []
-    let IsLast
 
     const categoryKeys = Object.keys(categorys);
 

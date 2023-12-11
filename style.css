@@ -2,7 +2,7 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
-    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+	font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 .top-color {
 	position: absolute;
@@ -25,6 +25,7 @@ img {
 	padding: 4px 0px !important;
 	background-color: #00000000 !important;
 	border: #00000000 !important;
+	font-weight: 700 !important;
 }
 .btn:hover {
 	background-color: #ffffff1e !important;
@@ -32,23 +33,122 @@ img {
 }
 
 .container {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 }
-.card{
+.card {
 	width: 30%;
 }
 
-.gray{
-    color: rgb(72, 72, 72);
+.gray {
+	color: rgb(72, 72, 72);
 }
 
-.green{
-    color: #16A34A;
+.green {
+	color: #16a34a;
 }
 
-.red{
-    color: #dd2727;
+.red {
+	color: #dd2727;
+}
+
+.greenBox {
+	background-color: #0fc753;
+}
+
+.redBox {
+	background-color: #fc1f1f;
+}
+
+.orangeBox {
+	background-color: #ffb73b;
+}
+
+.grade {
+	margin: 2px;
+	padding: 6px 6px;
+	border-radius: 4px;
+	color: #fff;
+}
+
+.top-color {
+	position: absolute;
+	background-color: #ed2727;
+	height: 18rem;
+	width: 100%;
+	z-index: -1;
+}
+main {
+	padding-top: 22px !important;
+}
+img {
+	margin-left: 12px;
+	margin-top: 1px;
+	width: 6.5rem;
+}
+.btn {
+	width: 12%;
+	max-width: 75px;
+	padding: 4px 0px !important;
+	background-color: #00000000 !important;
+	border: #00000000 !important;
+	font-weight: 700 !important;
+}
+.btn:hover {
+	background-color: #ffffff1e !important;
+	border: #00000000 !important;
+}
+
+.container {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+.card {
+	width: 30%;
+}
+
+.gray {
+	color: rgb(72, 72, 72);
+}
+
+.green {
+	color: #16a34a;
+}
+
+.red {
+	color: #dd2727;
+}
+
+.greenBox {
+	background-color: #16a34a;
+}
+
+.redBox {
+	background-color: #ee1313;
+}
+
+.orangeBox {
+	background-color: #ec9422;
+}
+
+.grade {
+	margin: 2px;
+	padding: 6px 6px;
+	border-radius: 4px;
+	width: 62px;
+	display: inline-block;
+	text-align: center;
+}
+
+.gradeBox {
+	margin-top: 12px;
+	padding: 15px 0px;
+	display: flex;
+}
+.branchName {
+	margin-right: 12px;
+	margin-top: 7px;
+	
 }
 
 @media only screen and (max-width: 560px) {
@@ -65,10 +165,32 @@ img {
 
 @media only screen and (max-width: 576px) {
 	.container {
-        padding-right: calc(var(--bs-gutter-x) * .5) !important;
-        padding-left: calc(var(--bs-gutter-x) * .5) !important;	}
-	.card{
+		padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+		padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+	}
+	.card {
 		width: 100%;
 	}
+}
 
+@media only screen and (max-width: 560px) {
+	.btn {
+		width: 33%;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.btn {
+		width: 8%;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.container {
+		padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+		padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+	}
+	.card {
+		width: 100%;
+	}
 }

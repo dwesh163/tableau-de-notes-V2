@@ -1,4 +1,5 @@
 import { AllAverageCategory } from './component/resum/AllAverageCategory.jsx';
+import { Card } from './component/main/Card.jsx';
 
 function App() {
 
@@ -20,11 +21,47 @@ function App() {
     },
   }
 
+  const gradesData = {
+    "grades" : {
+      "math" : [
+        1,
+        2,
+        4,
+        5,
+      ],
+      "histoire" : [
+        1.5,
+        4.5,
+        4.5,
+        6,
+      ],
+      "anglais" : [
+        4.5,
+        5.5,
+        5.5,
+        4.5,
+      ],
+      "economie" : [
+        3.5,
+        4.5,
+        6,
+        4.5,
+      ],
+      "allemand" : [
+        3.5,
+        2.5,
+        4.5,
+        6,
+      ]
+    },
+    "name" : "HJksd"
+  }
+  
 	return (
 		<>
 			<div className="container d-flex gap-3">
+        <Card gradesData={gradesData}/>
         <AllAverageCategory categorys={category} />
-        <div></div>
       </div>
 		</>
 	);
