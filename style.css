@@ -41,27 +41,27 @@ img {
 }
 
 .gray {
-	color: rgb(72, 72, 72);
+	color: rgb(72, 72, 72) !important;
 }
 
 .green {
-	color: #16a34a;
+	color: #16a34a !important;
 }
 
 .red {
-	color: #dd2727;
+	color: #dd2727 !important;
 }
 
 .greenBox {
-	background-color: #0fc753;
+	background-color: #0fc753 !important;
 }
 
 .redBox {
-	background-color: #fc1f1f;
+	background-color: #fc1f1f !important;
 }
 
 .orangeBox {
-	background-color: #ffb73b;
+	background-color: #ffb73b !important;
 }
 
 .grade {
@@ -138,6 +138,7 @@ img {
 	width: 62px;
 	display: inline-block;
 	text-align: center;
+	color: #fff !important;
 }
 
 .gradeBox {
@@ -148,7 +149,7 @@ img {
 .branchName {
 	margin-right: 12px;
 	margin-top: 7px;
-	
+	background-color: rgba(255, 0, 0, 0) !important;
 }
 
 @media only screen and (max-width: 560px) {

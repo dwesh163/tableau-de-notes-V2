@@ -1,30 +1,68 @@
-export function AverageCategory({ category, IsLast}) {
-    console.log(category);
+export function AverageCategory({ category, IsLast, name }) {
+	console.log(category);
 
-    let percentClass
-    let hr
+	let percentClass;
+	let hr;
+	let branchAverage = [];
+	let popBranchAverage = [];
 
-    if (category.percent > 0) {
-        percentClass='card-text green'
-    } else {
-        percentClass='card-text red'
-    }
+	for (const branch in category) {
+		branchAverage.push(calculateAverage(category[branch]));
+	}
 
-    if (!IsLast) {
-        hr = <hr className="border-black" style={{opacity: "0.15", margin: "0px"}} />
-    }
+	for (const branch in category) {
+		category[branch].pop();
+		popBranchAverage.push(calculateAverage(category[branch]));
+	}
+
+	let percent = calculatePercentage(calculateAverage(branchAverage), calculateAverage(popBranchAverage));
+
+	if (percent > 0) {
+		percentClass = 'card-text green';
+	} else {
+		percentClass = 'card-text red';
+	}
+
+	if (!IsLast) {
+		hr = <hr className="border-black" style={{ opacity: '0.15', margin: '0px' }} />;
+	}
 
 	return (
 		<>
 			<div className="card-body">
 				<div className="d-flex justify-content-between">
-					<p className="card-text gray">Moyenne générale {category.name}</p>
-					<p className={percentClass}>{category.percent}%</p>
+					<p className="card-text gray">Moyenne générale {name}</p>
+					<p className={percentClass}>{percent}%</p>
 				</div>
-				<h3 className="fw-bold">{category.average}</h3>
+				<h3 className="fw-bold">{calculateAverage(branchAverage)}</h3>
 			</div>
-            {hr}
-			
+			{hr}
 		</>
 	);
+}
+
+function calculateAverage(array) {
+	if (array.length === 0) {
+		return 0;
+	}
+
+	var sum = array.reduce(function (acc, value) {
+		return acc + value;
+	}, 0);
+
+	var average = sum / array.length;
+
+	return roundToNearest(average, 0.01);
+}
+
+function calculatePercentage(oldValue, newValue) {
+	var percentage = ((newValue - oldValue) / oldValue) * 100;
+
+	return roundToNearest(percentage, 0.001);
+}
+
+function roundToNearest(value, step) {
+	step || (step = 1.0);
+	var inv = 1.0 / step;
+	return Math.round(value * inv) / inv;
 }

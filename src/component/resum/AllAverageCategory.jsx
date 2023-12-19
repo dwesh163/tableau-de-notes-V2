@@ -1,20 +1,24 @@
-import { AverageCategory } from "./AverageCategory.jsx"
+import { AverageCategory } from './AverageCategory.jsx';
 
-export function AllAverageCategory({categorys}) {
+export function AllAverageCategory({ categorys }) {
+	let AverageCategoryList = [];
 
-    let AverageCategoryList = []
+	const categoryKeys = Object.keys(categorys);
 
-    const categoryKeys = Object.keys(categorys);
+	console.log(categoryKeys['grades']);
 
-    for (let i = 0; i < categoryKeys.length; i++) {
-        const category = categoryKeys[i];
-        const IsLast = i === categoryKeys.length - 1;
-    
-        AverageCategoryList.push(<AverageCategory key={category} category={categorys[category]} IsLast={IsLast} />);
-    }
-    
+	for (let i = 0; i < categoryKeys.length; i++) {
+		const category = categoryKeys[i];
+		const IsLast = i === categoryKeys.length - 1;
 
-    return <div className="card text-bg-light mb-3" style={{border: "none"}}>
-       {AverageCategoryList}
-    </div>
+		console.log('category', category);
+
+		AverageCategoryList.push(<AverageCategory key={category} name={category} category={categorys[category]} IsLast={IsLast} />);
+	}
+
+	return (
+		<div className="card text-bg-light mb-3" style={{ border: 'none' }}>
+			{AverageCategoryList}
+		</div>
+	);
 }
