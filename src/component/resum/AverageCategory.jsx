@@ -11,11 +11,17 @@ export function AverageCategory({ category, IsLast, name }) {
 	}
 
 	for (const branch in category) {
-		category[branch].pop();
-		popBranchAverage.push(calculateAverage(category[branch]));
+		if (category[branch].length >= 2) {
+			category[branch].pop();
+			popBranchAverage.push(calculateAverage(category[branch]));
+		} else {
+			popBranchAverage.push(0);
+		}
 	}
 
-	let percent = calculatePercentage(calculateAverage(branchAverage), calculateAverage(popBranchAverage));
+	console.log('popBranchAverage', popBranchAverage, branchAverage);
+
+	let percent = calculatePercentage(calculateAverage(popBranchAverage), calculateAverage(branchAverage));
 
 	if (percent > 0) {
 		percentClass = 'card-text green';
