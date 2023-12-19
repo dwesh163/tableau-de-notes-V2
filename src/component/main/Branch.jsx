@@ -15,7 +15,7 @@ export function Branch({ branchName, branchGrades }) {
 				<span className="branchName">{branchName} :</span>
 			</td>
 			<td>{gradeList}</td>
-			<td>{calculateAverage(branchGrades)}</td>
+			<td style={{ textAlign: 'center' }}>{calculateAverage(branchGrades)}</td>
 		</tr>
 	);
 }

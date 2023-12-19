@@ -11,8 +11,6 @@ export function AllAverageCategory({ categorys }) {
 		const category = categoryKeys[i];
 		const IsLast = i === categoryKeys.length - 1;
 
-		console.log('category', category);
-
 		AverageCategoryList.push(<AverageCategory key={category} name={category} category={categorys[category]} IsLast={IsLast} />);
 	}
 

@@ -15,7 +15,16 @@ export function Card({ gradesData }) {
 				<div className="card-body">
 					<h2 className="card-title fw-bold">{gradesData.name}</h2>
 					<hr className="border-black" style={{ opacity: '0.01', margin: '0px' }} />
-					<table class="table">{branchList}</table>
+					<table className="table">
+						<thead>
+							<tr>
+								<td>Name</td>
+								<td>Grades</td>
+								<td style={{ textAlign: 'center' }}>Averages</td>
+							</tr>
+						</thead>
+						<tbody>{branchList}</tbody>
+					</table>
 				</div>
 			</div>
 		</>
